@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "smiley-face-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/smileyFace/SmileyFaceWebPart.js",
+          "manifest": "./src/webparts/smileyFace/SmileyFaceWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SmileyFaceWebPartStrings": "lib/webparts/smileyFace/loc/{locale}.js"
+  }
+}

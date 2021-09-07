@@ -1,0 +1,167 @@
+
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.smileyFace {
+  color: black;
+  .container {
+    max-width: 90%;
+    margin: 0px auto;
+     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .row {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+    background-color: white;
+    padding: 20px;
+    color:black;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+  }
+
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+   
+    
+  }
+  .questionTitle {
+    margin-bottom: 4%;
+    font-weight:'bold';
+    color:black;
+
+  }
+  .questionSubTitle {
+    margin-top:2%;
+    margin-bottom: 2%;
+    font-weight:'bold';
+    color:black;
+
+  }
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .emojiContainer{
+    display:flex!important;
+  }
+ 
+  .button {
+    // Our button
+    text-decoration: none;
+    height: 32px;
+
+    // Primary Button
+    min-width: 80px;
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+    color: $ms-color-white;
+
+    // Basic Button
+    outline: transparent;
+    position: relative;
+    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: $ms-font-size-m;
+    font-weight: $ms-font-weight-regular;
+    border-width: 0;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 16px;
+
+    .label {
+      font-weight: $ms-font-weight-semibold;
+      font-size: $ms-font-size-m;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px;
+      vertical-align: top;
+      display: inline-block;
+    }
+   
+    
+  }
+  .smileyButton{
+    background-color: white;
+    border: white;
+    flex :1;
+    
+  }
+  .emojiShortView{
+    color:black;
+    width:90%
+  }
+  .notSelectedSmileyButton{
+    opacity: 0.5;
+  }
+
+ 
+  .progressBar{
+    margin-top: 1.5%;
+    flex: 0 1 80%;
+    margin-right: 3%;
+    margin-left: 3%;
+
+    border-radius: 4px;
+  }
+ 
+  .textarea{
+    border-radius:3px;
+    margin-top: 8px;
+    width: 98%;
+    
+  }
+  .submit{
+    margin-top:10px;
+    border-radius: 4px;
+    background-color :#b794d9;
+    color:white;
+    float:right;
+  }
+
+  
+  .barChart{
+    display:flex!important;
+    margin-bottom: 5%;
+  }
+
+ .containerProgress{
+  // margin-top: 2%;
+  flex: 0 1 75%;
+  margin-right: 3%;
+  margin-left: 3%;
+
+  border-radius: 4px;
+  height: 10;
+  background-color: #e0e0de;
+   
+  }
+
+ .fillerProgress{
+    height: '100%';
+    background-color: #b794d9;
+    border-radius:inherit;
+    text-align: right;
+  }
+
+  .labelProgress{
+    padding: 5;
+    color: white;
+    opacity: 0;
+    font-weight: 'bold'
+  }
+
+}
