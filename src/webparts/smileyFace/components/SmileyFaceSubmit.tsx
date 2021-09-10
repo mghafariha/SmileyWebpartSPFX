@@ -81,12 +81,12 @@ export default class SmileyFaceSubmit extends React.Component<ISmileyFaceSubmitP
       console.log('weeknumber',weekNumber);
             let item=this.state.formItem;
           
-            pnp.sp.web.lists.getByTitle("SR1_UserDailyExpressions").items.add({
+            pnp.sp.web.lists.getByTitle("UserDailyExpressions").items.add({
             Title: moment(new Date()).toISOString().split('T')[0] +" "+ this.state.currentUser.name ,
             Note:this.state.formItem.note,
             Expression:this.state.formItem.expression,
-            WeekNumber:weekNumber,
-            Date : moment(new Date()).format("YYYY-MM-DD")
+         
+          
           
       }).then((r) => {
         console.log("item id is:", r.data.Id);
@@ -115,11 +115,11 @@ public render() : React.ReactElement<ISmileyFaceSubmitProps>{
                     <div className={styles.questionSubTitle}>Want to let us know more?</div>
                     <div >(Your feedback is anonymous)</div>
                     
-                  <textarea className={styles.textarea} rows={8}   value={this.state.formItem.note} onChange={e=>{this.setState({...this.state,formItem:{...this.state.formItem,note:e.target.value}})}} />
+                  <textarea placeholder='Write your thoughts here, or you can just press submit' className={styles.textarea} rows={8}   value={this.state.formItem.note} onChange={e=>{this.setState({...this.state,formItem:{...this.state.formItem,note:e.target.value}})}} />
                     
                 
                 
-                  <DefaultButton className={styles.submit} onClick={e=> this.clickSubmitButton(e)}>Sumbit</DefaultButton>
+                  <DefaultButton className={styles.submit} onClick={e=> this.clickSubmitButton(e)}>Submit</DefaultButton>
                  </div>} 
          
                 

@@ -43,8 +43,8 @@ export default class SmileyFace extends React.Component<ISmileyFaceProps, ISmile
                
                const nextdayStr = moment(nextday).format("YYYY-MM-DD");
                var nextDate = nextdayStr+'T00:00:00.000Z';
-                // const result=await sp.web.lists.getByTitle("SR1_UserDailyExpressions").items.select("Id","Author","Author/Id","Created").filter(`(AuthorId eq ${userResult['Id']}) and (Date ge datetime'${currentDate}') and (Date le datetime'${nextDate}')`).expand("Author").get();
-                 const result=await pnp.sp.web.lists.getByTitle("SR1_UserDailyExpressions").items.select("Id","Author","Author/Id","Created").filter(`(AuthorId eq ${userResult['Id']}) and (Date eq '${todayStr}') `).expand("Author").get();
+                // const result=await sp.web.lists.getByTitle("UserDailyExpressions").items.select("Id","Author","Author/Id","Created").filter(`(AuthorId eq ${userResult['Id']}) and (Date ge datetime'${currentDate}') and (Date le datetime'${nextDate}')`).expand("Author").get();
+                 const result=await pnp.sp.web.lists.getByTitle("UserDailyExpressions").items.select("Id","Author","Author/Id","Created").filter(`(AuthorId eq ${userResult['Id']}) and (Created ge datetime'${currentDate}') and (Created le datetime'${nextDate}') `).expand("Author").get();
                  this.setState({...this.state,isLoading:false});
                 console.log('results',result);
                  if(result.length>0)
