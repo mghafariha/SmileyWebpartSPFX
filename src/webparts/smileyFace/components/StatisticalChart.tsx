@@ -49,7 +49,7 @@ export default class StatisticalChart extends React.Component<IStatisticalChartP
         console.log('user',userResult);
           this.setState({...this.state,currentUser:{name:userResult['Title'], id:userResult['Id'],email:userResult["Email"]}});  
           //const result=await pnp.sp.web.lists.getByTitle("UserDailyExpressions").items.select("Id","Author","Author/Id","Created","Expression").filter(`(AuthorId eq ${userResult['Id']}) and (WeekNumber eq '${weekNumber}')`).expand("Author").get();
-           const result=await pnp.sp.web.lists.getByTitle("UserDailyExpressions").items.select("Id","Expression").get();
+           const result=await pnp.sp.web.lists.getByTitle("UserDailyExpressions").items.select("Id","Expression").top(5000).get();
            console.log('countAll',result.length);
            this.setState({...this.state,countAllData:result.length, verySadCount:result.filter(a=>a.Expression=='verySad').length,
          
